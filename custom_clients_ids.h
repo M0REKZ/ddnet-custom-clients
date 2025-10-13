@@ -1,3 +1,6 @@
+// This file can be included several times.
+#pragma once
+
 // Copyright (C) Benjamín Gajardo (also known as +KZ)
 
 enum

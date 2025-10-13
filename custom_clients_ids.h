@@ -1,3 +1,4 @@
+// Copyright (C) Benjamín Gajardo (also known as +KZ)
 
 enum
 {

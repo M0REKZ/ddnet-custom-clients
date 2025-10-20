@@ -1,5 +1,5 @@
 # ddnet-custom-clients
-Custom clients IDs for DDNet so custom clients can identify which client is each player using by identifying invalid country flags
+Custom clients IDs for DDNet so custom clients can identify which client is each player using by checking invalid country flags
 
 First implemented in Kaizo Network, but it can also be shared among other clients
 

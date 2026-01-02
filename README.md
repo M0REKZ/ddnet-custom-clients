@@ -5,8 +5,9 @@ First implemented in Kaizo Network, but it can also be shared among other client
 
 Clients using this:
 
-* [Kaizo Network](https://github.com/M0REKZ/kaizo-network)
-* [Chillerbot-UX](https://github.com/chillerbot/chillerbot-ux)
+* [Kaizo Client](https://github.com/M0REKZ/kaizo-client)
+* [Chillerbot-UX](https://chillerbot.github.io/)
+* [Duck Client](https://pointer31.github.io/duckclient)
 
 # Adding a new client
 

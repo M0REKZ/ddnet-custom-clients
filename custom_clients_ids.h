@@ -18,7 +18,7 @@ enum
 	MAXIMUM_CUSTOM_CLIENT_ID = CUSTOM_CLIENT_ID_CHILLERBOTUX,
 
 	// Custom client IDs (Skin Color Method)
-	// Range is small (510 possible IDs)
+	// Range is smaller (65025 possible IDs by using both Body and Feet colors)
 
 	// Body
 	CCID_COLOR_BODY_KAIZO_CLIENT = 1,

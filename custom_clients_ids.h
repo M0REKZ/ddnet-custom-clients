@@ -18,13 +18,17 @@ enum
 	MAXIMUM_CUSTOM_CLIENT_ID = CUSTOM_CLIENT_ID_CHILLERBOTUX,
 
 	// Custom client IDs (Skin Color Method)
-	// Range is smaller (65025 possible IDs by using both Body and Feet colors)
+	// Range is smaller (65025 possible IDs by using Body and Feet color combinations)
 
 	// Body
+	CCID_COLOR_BODY_NONE = 0,
 	CCID_COLOR_BODY_KAIZO_CLIENT = 1,
 	CCID_COLOR_BODY_PDUCKCLIENT = 2,
 	CCID_COLOR_BODY_CHILLERBOTUX = 3,
 
 	// Feet
-	// (Empty...)
+	CCID_COLOR_FEET_NONE = 0,
+	CCID_COLOR_FEET_KAIZO_CLIENT = 0,
+	CCID_COLOR_FEET_PDUCKCLIENT = 0,
+	CCID_COLOR_FEET_CHILLERBOTUX = 0,
 };

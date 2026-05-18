@@ -21,7 +21,7 @@ enum
 	CCID_COLOR_FEET_CHILLERBOTUX = 0,
 
 	// Custom client IDs (Country flag method)
-	// This method is obsolete, please use skin color method instead)
+	// This method is obsolete, please use skin color method instead
 	CUSTOM_CLIENT_ID_KAIZO_NETWORK = 16777216,
 	CUSTOM_CLIENT_ID_PDUCKCLIENT = 16777217,
 	CUSTOM_CLIENT_ID_GAMER_07 = 16777218, //0.7 Client Reserved

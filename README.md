@@ -1,17 +1,17 @@
 # DDNet custom client identification standard
-Custom clients IDs for DDNet so custom clients can identify which client is each player using by checking invalid country flags OR the unused alpha value in player skin color.
+Custom clients IDs for DDNet so custom clients can identify which client is each player using by using unused values in the Teeworlds protocol that can be sent to the server and (in most cases) will be sent back to all other clients without any change.
 
-The advantage of the methods used here is that you don't need a 3rd party server to let know other players which client you are using (like Rushie Client and BestClient do, and like T-Client plans to do), you just take advantage of unused values from the Teeworlds protocol.
+The advantage of the methods used here is that you don't need a 3rd party server for this (like Rushie Client and BestClient do, and like T-Client plans to do), you just take advantage of unused values from the Teeworlds protocol.
 
-This gets rid of the dependency of authenticating with a server that we all know some day will be shutdown by instead sending the information through the Teeworlds/DDNet server itself.
+This gets rid of the dependency of authenticating with a server that we all know some day will be shutdown due to real life reasons, by instead sending the information through the Teeworlds/DDNet server itself.
 
-First implemented in Kaizo Client, but it can also be shared among other clients
+First implemented in Kaizo Client, but it can also be shared among other clients since this header is published under LGPL.
 
 Clients using this:
 
-* [Kaizo Client](https://github.com/M0REKZ/kaizo-client)
+* [Kaizo Client](https://github.com/M0REKZ/kaizo-client) (original implementation)
 * [Chillerbot-UX](https://chillerbot.github.io/)
-* [Duck Client](https://pointer31.github.io/duckclient)
+* [Duck/Infclass Client](https://pointer31.github.io/duckclient)
 
 # Adding a new client
 

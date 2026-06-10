@@ -26,19 +26,19 @@ But if you still want to add a new client ID for the country flag method, make s
 ## Skin color method
 Your client must check the alpha value for both Body and Feet colors of the player to identify other clients, if a specific combination of both is a custom client ID from the list, the player is using a custom client.
 
-To make your life easier for checking/setting alpha value, you can use a union like this:
+To make your life easier for checking/inserting alpha value, you can use the macros included in this repo:
 
+	//Insert a CCID into skin color:
+	MACRO_INSERT_CCID_INTO_SKIN_COLOR(
+			Msg.m_ColorBody, Msg.m_ColorFeet,
+			CCID_COLOR_BODY_YOUR_CLIENT, CCID_COLOR_FEET_YOUR_CLIENT
+		)
 
-    union
-	{
-		int ColorValue = 0;
-		unsigned char Bytes[4];
-	} data;
-
-	data.ColorValue = pInfo->m_ColorBody; // Get body color
-
-	// data.Bytes[3] is the body color alpha
-    // do the same for feet color
+	//Check if skin color contains a specific CCID:
+    MACRO_IS_SKIN_COLOR_CCID(
+            pInfo->m_ColorBody, pInfo->m_ColorFeet,
+            CCID_COLOR_BODY_HIS_CLIENT, CCID_COLOR_HIS_CLIENT
+        )
       
 ## Country flag method
 

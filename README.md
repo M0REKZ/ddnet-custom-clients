@@ -28,17 +28,19 @@ Your client must check the alpha value for both Body and Feet colors of the play
 
 To make your life easier for checking/inserting alpha value, you can use the macros included in this repo:
 
-	//Insert a CCID into skin color:
-	MACRO_INSERT_CCID_INTO_SKIN_COLOR(
-			Msg.m_ColorBody, Msg.m_ColorFeet,
-			CCID_COLOR_BODY_YOUR_CLIENT, CCID_COLOR_FEET_YOUR_CLIENT
-		)
+```C++
+//Insert a CCID into skin color:
+MACRO_INSERT_CCID_INTO_SKIN_COLOR(
+		Msg.m_ColorBody, Msg.m_ColorFeet,
+		CCID_COLOR_BODY_YOUR_CLIENT, CCID_COLOR_FEET_YOUR_CLIENT
+	)
 
-	//Check if skin color contains a specific CCID:
-    MACRO_IS_SKIN_COLOR_CCID(
-            pInfo->m_ColorBody, pInfo->m_ColorFeet,
-            CCID_COLOR_BODY_HIS_CLIENT, CCID_COLOR_HIS_CLIENT
-        )
+//Check if skin color contains a specific CCID:
+MACRO_IS_SKIN_COLOR_CCID(
+		pInfo->m_ColorBody, pInfo->m_ColorFeet,
+		CCID_COLOR_BODY_HIS_CLIENT, CCID_COLOR_HIS_CLIENT
+	)
+```
       
 ## Country flag method
 

@@ -34,3 +34,64 @@ enum
 	MAXIMUM_CUSTOM_CLIENT_ID = CUSTOM_CLIENT_ID_CHILLERBOTUX,
 
 };
+
+// Macros for easy implementation
+
+/**
+ * Skin Color Method:
+ * Inserts the custom client ID into skin color
+ * @warning It will overwrite BodyColor and FeetColor!
+ *
+ * @param BodyColor Body color of the Tee Skin to overwrite
+ * @param FeetColor Feet color of the Tee Skin to overwrite
+ * @param BodyCCID Body CCID to insert
+ * @param FeetCCID Feet CCID to insert
+ *
+ */
+#define MACRO_INSERT_CCID_INTO_SKIN_COLOR(BodyColor, FeetColor, BodyCCID, FeetCCID) {	\
+	union	\
+	{	\
+		int c = 0;	\
+		unsigned char b[4];	\
+	} a,b;	\
+		\
+	/* Only allow int (TODO: should use decltype) */	\
+	static_assert(sizeof(BodyColor) == sizeof(int));	\
+	static_assert(sizeof(FeetColor) == sizeof(int));	\
+		\
+	a.c = BodyColor;	\
+	b.c = FeetColor;	\
+	\
+	a.b[3] = (unsigned char)BodyCCID; 	\
+	b.b[3] = (unsigned char)FeetCCID; 	\
+	BodyColor = a.c; 	\
+	FeetColor = b.c; 	\
+}
+
+/**
+ * Skin Color Method:
+ * Check if client skin color has a CCID
+ *
+ * @param BodyColor Body color of the Tee Skin
+ * @param FeetColor Feet color of the Tee Skin
+ * @param BodyCCID Body CCID to check for
+ * @param FeetCCID Feet CCID to check for
+ *
+ */
+#define MACRO_IS_SKIN_COLOR_CCID(BodyColor, FeetColor, BodyCCID, FeetCCID) [&] {	\
+	union	\
+	{	\
+		int c = 0;	\
+		unsigned char b[4];	\
+	} a,b;	\
+		\
+	/* Only allow int (TODO: should use decltype) */	\
+	static_assert(sizeof(BodyColor) == sizeof(int));	\
+	static_assert(sizeof(FeetColor) == sizeof(int));	\
+		\
+	a.c = BodyColor;	\
+	b.c = FeetColor;	\
+	if(a.b[3] == BodyCCID && b.b[3] == FeetCCID)	\
+		return true;	\
+	return false;	\
+}()	\

@@ -48,25 +48,26 @@ enum
  * @param FeetCCID Feet CCID to insert
  *
  */
-#define MACRO_INSERT_CCID_INTO_SKIN_COLOR(BodyColor, FeetColor, BodyCCID, FeetCCID) {	\
-	union	\
-	{	\
-		int c = 0;	\
-		unsigned char b[4];	\
-	} a,b;	\
-		\
-	/* Only allow int (TODO: should use decltype) */	\
-	static_assert(sizeof(BodyColor) == sizeof(int));	\
-	static_assert(sizeof(FeetColor) == sizeof(int));	\
-		\
-	a.c = BodyColor;	\
-	b.c = FeetColor;	\
-	\
-	a.b[3] = (unsigned char)BodyCCID; 	\
-	b.b[3] = (unsigned char)FeetCCID; 	\
-	BodyColor = a.c; 	\
-	FeetColor = b.c; 	\
-}
+#define MACRO_INSERT_CCID_INTO_SKIN_COLOR(BodyColor, FeetColor, BodyCCID, FeetCCID) \
+	{ \
+		union \
+		{ \
+			int c = 0; \
+			unsigned char b[4]; \
+		} a, b; \
+\
+		/* Only allow int (TODO: should use decltype) */ \
+		static_assert(sizeof(BodyColor) == sizeof(int)); \
+		static_assert(sizeof(FeetColor) == sizeof(int)); \
+\
+		a.c = BodyColor; \
+		b.c = FeetColor; \
+\
+		a.b[3] = (unsigned char)BodyCCID; \
+		b.b[3] = (unsigned char)FeetCCID; \
+		BodyColor = a.c; \
+		FeetColor = b.c; \
+	}
 
 /**
  * Skin Color Method:
@@ -78,21 +79,20 @@ enum
  * @param FeetCCID Feet CCID to check for
  *
  */
-#define MACRO_IS_SKIN_COLOR_CCID(BodyColor, FeetColor, BodyCCID, FeetCCID) [&] {	\
-	union	\
-	{	\
-		int c = 0;	\
-		unsigned char b[4];	\
-	} a,b;	\
-		\
-	/* Only allow int (TODO: should use decltype) */	\
-	static_assert(sizeof(BodyColor) == sizeof(int));	\
-	static_assert(sizeof(FeetColor) == sizeof(int));	\
-		\
-	a.c = BodyColor;	\
-	b.c = FeetColor;	\
-	if(a.b[3] == BodyCCID && b.b[3] == FeetCCID)	\
-		return true;	\
-	return false;	\
-}()	\
-
+#define MACRO_IS_SKIN_COLOR_CCID(BodyColor, FeetColor, BodyCCID, FeetCCID) [&] { \
+	union \
+	{ \
+		int c = 0; \
+		unsigned char b[4]; \
+	} a, b; \
+\
+	/* Only allow int (TODO: should use decltype) */ \
+	static_assert(sizeof(BodyColor) == sizeof(int)); \
+	static_assert(sizeof(FeetColor) == sizeof(int)); \
+\
+	a.c = BodyColor; \
+	b.c = FeetColor; \
+	if(a.b[3] == BodyCCID && b.b[3] == FeetCCID) \
+		return true; \
+	return false; \
+}()

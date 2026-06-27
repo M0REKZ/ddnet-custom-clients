@@ -38,7 +38,7 @@ MACRO_INSERT_CCID_INTO_SKIN_COLOR(
 //Check if skin color contains a specific CCID:
 MACRO_IS_SKIN_COLOR_CCID(
 		pInfo->m_ColorBody, pInfo->m_ColorFeet,
-		CCID_COLOR_BODY_HIS_CLIENT, CCID_COLOR_HIS_CLIENT
+		CCID_COLOR_BODY_HIS_CLIENT, CCID_COLOR_FEET_HIS_CLIENT
 	)
 ```
       

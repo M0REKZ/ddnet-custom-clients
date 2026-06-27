@@ -95,3 +95,4 @@ enum
 		return true;	\
 	return false;	\
 }()	\
+

@@ -23,7 +23,8 @@ But if you still want to add a new client ID for the country flag method, make s
 
 # How to use
 
-## Skin color method
+## <a name="skin-color-method"></a> Skin color method
+
 Your client must check the alpha value for both Body and Feet colors of the player to identify other clients, if a specific combination of both is a custom client ID from the list, the player is using a custom client.
 
 To make your life easier for checking/inserting alpha value, you can use the macros included in this repo:

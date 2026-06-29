@@ -52,6 +52,6 @@ MACRO_IS_SKIN_COLOR_CCID(
 >
 > It's known to cause issues like connection problems or not being able to change back to a normal country flag after sending it to the server.
 >
-> Use [Skin color method](#skin-color-method) instead.
+> Use [Skin color method](https://github.com/M0REKZ/ddnet-custom-clients#skin-color-method) instead.
 
 Your client must check which country flag is the other player using, if it is a ID from the list, you should make the client remember which custom client is the player using since usually custom clients will show the custom country flag and then switch back to a normal country flag.

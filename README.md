@@ -48,7 +48,11 @@ MACRO_IS_SKIN_COLOR_CCID(
 		CCID_COLOR_BODY_HIS_CLIENT, CCID_COLOR_FEET_HIS_CLIENT
 	)
 ```
-      
+
+## 0.7 Skin part name method
+
+Used by clients made in the 0.7 days, you need to support this method if you want to detect 0.7 clients such as F-Client, Gamer and ZillyWoods.
+	  
 ## Country flag method
 
 > [!IMPORTANT]

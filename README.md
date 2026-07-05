@@ -21,9 +21,13 @@ The country flag method is not recommended since it is known to cause bugs like 
 
 But if you still want to add a new client ID for the country flag method, make sure the ID number is greater than the ID for Kaizo Network, this way we avoid conflicts with possible future DDNet country flag additions.
 
+Also you may want to add your own icon to [the icons branch](https://github.com/M0REKZ/ddnet-custom-clients/tree/icons).
+
 # How to use
 
-Below you will find how to implement a custom client identification method in your own client:
+Below you will find how to implement a custom client identification method in your own client.
+
+Also, you may want to use the icons from [the icons branch](https://github.com/M0REKZ/ddnet-custom-clients/tree/icons).
 
 ## Skin color method
 

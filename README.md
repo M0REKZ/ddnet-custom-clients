@@ -12,3 +12,4 @@ Please check license.txt since each icon may have their own license
 |[Teeworlds Gamer (0.7)](https://www.teeworlds.com/forum/viewtopic.php?id=12622)|<img src="gamer.png" alt="icon" width="64"/>|
 |[Kaizo Client](https://m0rekz.github.io/Kaizo-Client/)|<img src="kaizoicon.png" alt="icon" width="64"/>|
 |[ZillyWoods (0.7)](https://zillywoods.github.io/ZillyWoods-web/)|<img src="zillywoods.png" alt="icon" width="64"/>|
+|[Rushie Client](https://github.com/RushieClient/RushieClient-ddnet)|<img src="rushieicon.png" alt="icon" width="64"/>|

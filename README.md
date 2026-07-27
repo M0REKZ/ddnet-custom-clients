@@ -1,7 +1,7 @@
 # DDNet custom client identification standard
 Custom clients IDs for DDNet so custom clients can identify which client is each player using by using unused values in the Teeworlds protocol that can be sent to the server and (in most cases) will be sent back to all other clients without any change.
 
-The advantage of the methods used here is that you don't need a 3rd party server for this (like Rushie Client and BestClient do, and like T-Client plans to do), you just take advantage of unused values from the Teeworlds protocol.
+The advantage of the methods used here is that you don't need a 3rd party server for this (like some new clients do, and like T-Client plans to do), you just take advantage of unused values from the Teeworlds protocol.
 
 This gets rid of the dependency of authenticating with a server that we all know some day will be shutdown due to real life reasons, by instead sending the information through the Teeworlds/DDNet server itself.
 

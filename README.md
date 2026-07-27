@@ -1,4 +1,5 @@
 # DDNet custom client identification standard
+###### By +KZ
 Custom clients IDs for DDNet so custom clients can identify which client is each player using by using unused values in the Teeworlds protocol that can be sent to the server and (in most cases) will be sent back to all other clients without any change.
 
 The advantage of the methods used here is that you don't need a 3rd party server for this (like some new clients do, and like T-Client plans to do), you just take advantage of unused values from the Teeworlds protocol.
@@ -16,11 +17,16 @@ Clients using this (sorted by implementation date):
 
 # Adding a new client
 
-Just check the file 'custom_clients_ids.h' from this repo, add a new ID for the skin color method, send a pull request here after that and make your client send the ID in the skin color alpha.
+Just check the file 'custom_clients_ids.h' from this repo: Add a new ID in the format `CUSTOM_CLIENT_ID_YOURCLIENNAME`, and depending on the method you are using you must also add the corresponding IDs to identify your client.
 
-The country flag method is not recommended since it is known to cause bugs like not being able to switch back to the player flag or even causing connection problems.
+Send a pull request here after that and make sure your client sends the same IDs using the same method.
 
-But if you still want to add a new client ID for the country flag method, make sure the ID number is greater than the ID for Kaizo Network, this way we avoid conflicts with possible future DDNet country flag additions.
+Currently this repository lists IDs for the following methods:
+* [Skin color method](https://github.com/M0REKZ/ddnet-custom-clients#skin-color-method)
+* [0.7 Skin part name method](https://github.com/M0REKZ/ddnet-custom-clients#07-skin-part-name-method)
+* [Country flag method (obsolete)](https://github.com/M0REKZ/ddnet-custom-clients#country-flag-method)
+
+The country flag method is obsolete and not recommended due to the problems it causes, the IDs still can be found in the file but they are commented out.
 
 Also you may want to add your own icon to [the icons branch](https://github.com/M0REKZ/ddnet-custom-clients/tree/icons).
 
@@ -44,10 +50,16 @@ MACRO_INSERT_CCID_INTO_SKIN_COLOR(
 	)
 
 //Check if skin color contains a specific CCID:
-MACRO_IS_SKIN_COLOR_CCID(
+if(
+	MACRO_IS_SKIN_COLOR_CCID(
 		pInfo->m_ColorBody, pInfo->m_ColorFeet,
 		CCID_COLOR_BODY_HIS_CLIENT, CCID_COLOR_FEET_HIS_CLIENT
 	)
+	)
+{
+	//Save detected client
+	m_aClients[CheckingId].m_CustomClient = CUSTOM_CLIENT_ID_HIS_CLIENT;
+}
 ```
 
 ## 0.7 Skin part name method
@@ -56,7 +68,7 @@ Used by clients made in the 0.7 days, you need to support this method if you wan
 
 Kaizo Client also uses this method for 0.7 connections.
 
-You need to loop through all the 0.7 Skin parts of the client checking for strings defined in the header file found in this repository, here is some code to show a example:
+To detect it you need to loop through all the 0.7 Skin parts of the client checking for strings defined in the header file found in this repository, here is some code to show a example:
 
 ```C++
 // Check for 0.7 custom clients
@@ -89,7 +101,7 @@ if(Client()->IsSixup())
 				break;
 			case 3:
 				pClientString = CCID_07_SKIN_PART_NAME_KAIZO_CLIENT_07_MODE;
-				CustomClientId = CUSTOM_CLIENT_ID_KAIZO_NETWORK;
+				CustomClientId = CUSTOM_CLIENT_ID_KAIZO_CLIENT;
 				break;
 			}
 
@@ -112,10 +124,12 @@ if(Client()->IsSixup())
 ## Country flag method
 
 > [!IMPORTANT]
-> Country flag method is obsolete and only used in initial Kaizo Network Client versions.
+> Country flag method is obsolete and only used in initial **Kaizo Network Client** versions (which is a very initial version of **Kaizo Client**), *no client uses this method today*.
 >
-> It's known to cause issues like connection problems or not being able to change back to a normal country flag after sending it to the server.
+> It's known to cause annoying issues like connection problems or not being able to change back to a normal country flag after sending it to the server.
 >
-> Use [Skin color method](https://github.com/M0REKZ/ddnet-custom-clients#skin-color-method) instead.
+> Please use [Skin color method](https://github.com/M0REKZ/ddnet-custom-clients#skin-color-method) instead.
 
 Your client must check which country flag is the other player using, if it is a ID from the list, you should make the client remember which custom client is the player using since usually custom clients will show the custom country flag and then switch back to a normal country flag.
+
+To send the ID you must set the sent country flag to your client ID, and then reset it to the player country flag after some time, note that this causes connection problems in most cases.

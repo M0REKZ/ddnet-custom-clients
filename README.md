@@ -52,6 +52,61 @@ MACRO_IS_SKIN_COLOR_CCID(
 ## 0.7 Skin part name method
 
 Used by clients made in the 0.7 days, you need to support this method if you want to detect 0.7 clients such as F-Client, Gamer and ZillyWoods.
+
+Kaizo Client also uses this method for 0.7 connections.
+
+You need to loop through all the 0.7 Skin parts of the client checking for strings defined in the header file found in this repository, here is some code to show a example:
+
+```C++
+// Check for 0.7 custom clients
+if(Client()->IsSixup())
+{
+	bool Found = false;
+	for(int CheckingId = 0; CheckingId < MAX_CLIENTS; CheckingId++)
+	{
+		if(m_aClients[CheckingId].m_CustomClient)
+			continue;
+
+		Found = false;
+		for(int Client = 0; Client < 4; Client++)
+		{
+			const char* pClientString = "";
+			int CustomClientId = 0;
+			switch (Client)
+			{
+			case 0:
+				pClientString = CCID_07_SKIN_PART_NAME_TEEWORLDS_GAMER;
+				CustomClientId = CUSTOM_CLIENT_ID_GAMER_07;
+				break;
+			case 1:
+				pClientString = CCID_07_SKIN_PART_NAME_ZILLYWOODS;
+				CustomClientId = CUSTOM_CLIENT_ID_ZILLYWOODS_07;
+				break;
+			case 2:
+				pClientString = CCID_07_SKIN_PART_NAME_FCLIENT;
+				CustomClientId = CUSTOM_CLIENT_ID_FCLIENT_07;
+				break;
+			case 3:
+				pClientString = CCID_07_SKIN_PART_NAME_KAIZO_CLIENT_07_MODE;
+				CustomClientId = CUSTOM_CLIENT_ID_KAIZO_NETWORK;
+				break;
+			}
+
+			for(int p = 0; p < protocol7::NUM_SKINPARTS; p++)
+			{
+				if(str_startswith(m_aClients[CheckingId].m_aSixup[g_Config.m_ClDummy].m_aaSkinPartNames[p], pClientString))
+				{
+					m_aClients[CheckingId].m_CustomClient = CustomClientId;
+					Found = true;
+					break;
+				}
+			}
+			if(Found)
+				break;
+		}
+	}
+}
+```
 	  
 ## Country flag method
 

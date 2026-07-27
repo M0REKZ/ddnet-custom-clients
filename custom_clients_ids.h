@@ -3,6 +3,13 @@
 
 // Copyright (C) Benjamín Gajardo (also known as +KZ)
 
+// Custom client IDs (0.7 Skin Part Name Method)
+// Use this method to identify some clients in 0.7 servers
+#define CCID_07_SKIN_PART_NAME_TEEWORLDS_GAMER "gamer!"
+#define CCID_07_SKIN_PART_NAME_FCLIENT "fclient!"
+#define CCID_07_SKIN_PART_NAME_ZILLYWOODS "zilly!"
+#define CCID_07_SKIN_PART_NAME_KAIZO_CLIENT_07_MODE "kaizo!"
+
 enum
 {
 	// Custom client IDs (Skin Color Method)

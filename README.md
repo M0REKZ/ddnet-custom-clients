@@ -7,11 +7,12 @@ This gets rid of the dependency of authenticating with a server that we all know
 
 First implemented in Kaizo Client, but it can also be shared among other clients since this header is published under LGPL.
 
-Clients using this:
+Clients using this (sorted by implementation date):
 
 * [Kaizo Client](https://github.com/M0REKZ/kaizo-client) (original implementation)
 * [Chillerbot-UX](https://chillerbot.github.io/)
 * [Duck/Infclass Client](https://pointer31.github.io/duckclient)
+* [Rushie Client](https://github.com/RushieClient/RushieClient-ddnet)
 
 # Adding a new client
 

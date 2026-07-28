@@ -33,4 +33,8 @@ zillywoods.png:
     source: https://github.com/M0REKZ/kaizo-client/blob/client/data/kz/zillywoods.png
     original source: https://github.com/ZillyWoods/ZillyWoods/blob/zilly/datasrc/client_icons.png
 
+rushieicon.png:
+    author: Voix
+    license: CC BY-SA 3.0
+    source: https://github.com/RushieClient/RushieClient-ddnet/blob/master/data/rclient/rclient_icon.png
 

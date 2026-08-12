@@ -14,7 +14,8 @@ Clients using this (sorted by implementation date):
 * [Chillerbot-UX](https://chillerbot.github.io/)
 * [Duck/Infclass Client](https://pointer31.github.io/duckclient)
 * [Rushie Client](https://github.com/RushieClient/RushieClient-ddnet)
-
+* Ascend Client
+  
 # Adding a new client
 
 Just check the file 'custom_clients_ids.h' from this repo: Add a new ID in the format `CUSTOM_CLIENT_ID_YOURCLIENNAME`, and depending on the method you are using you must also add the corresponding IDs to identify your client.

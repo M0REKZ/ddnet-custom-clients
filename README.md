@@ -13,3 +13,4 @@ Please check license.txt since each icon may have their own license
 |[Kaizo Client](https://m0rekz.github.io/Kaizo-Client/)|<img src="kaizoicon.png" alt="icon" width="64"/>|
 |[ZillyWoods (0.7)](https://zillywoods.github.io/ZillyWoods-web/)|<img src="zillywoods.png" alt="icon" width="64"/>|
 |[Rushie Client](https://github.com/RushieClient/RushieClient-ddnet)|<img src="rushieicon.png" alt="icon" width="64"/>|
+|Ascend Client|<img src="ascendclient.png" alt="icon" width="64"/>|

@@ -15,6 +15,11 @@ Clients using this (sorted by implementation date):
 * [Duck/Infclass Client](https://pointer31.github.io/duckclient)
 * [Rushie Client](https://github.com/RushieClient/RushieClient-ddnet)
 * Ascend Client
+
+Other supported clients:
+* [Teeworlds Gamer](https://www.teeworlds.com/forum/viewtopic.php?id=12622)
+* [F-Client](https://fokkonaut.github.io/F-Client/)
+* [ZillyWoods](https://zillywoods.github.io/ZillyWoods-web/)
   
 # Adding a new client
 

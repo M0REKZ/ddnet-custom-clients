@@ -23,7 +23,7 @@ Other supported clients:
   
 # Adding a new client
 
-Just check the file 'custom_clients_ids.h' from this repo: Add a new ID in the format `CUSTOM_CLIENT_ID_YOURCLIENNAME`, and depending on the method you are using you must also add the corresponding IDs to identify your client.
+Just check the file 'custom_clients_ids.h' from this repo: Add a new ID in the format `CUSTOM_CLIENT_ID_YOURCLIENTNAME`, and depending on the method you are using you must also add the corresponding IDs to identify your client.
 
 Send a pull request here after that and make sure your client sends the same IDs using the same method.
 
